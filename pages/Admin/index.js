@@ -1,19 +1,16 @@
-"use client";
-
 import { Button, Checkbox, Label, TextInput } from "flowbite-react";
-import TeacherNavBar from "@/components/TeacherNavBar";
 
-export default function Home() {
+const index = () => {
   return (
     <>
-      <main
+      <div
         className={`flex min-h-screen flex-col items-center justify-center p-24 bg-zinc-200`}
       >
         <div >
-          <form className="flex max-w-md flex-col gap-4">
+          <form className="flex flex-col gap-4">
             <div>
               <h1 className="text-lg font-bold" >
-                  Enter your details to login
+                  Admin Login
               </h1>
             </div>
             <div>
@@ -39,7 +36,9 @@ export default function Home() {
             <Button gradientDuoTone="cyanToBlue" type="submit">Submit</Button>
           </form>
         </div>
-      </main>
+      </div>
     </>
-  );
+  )
 }
+
+export default index

@@ -7,7 +7,7 @@ const index = () => {
   return (
     <>
       <TeacherNavBar />
-      <div className="flex min-h-screen flex-row gap-5 items-center justify-center p-24 ">
+      <div className="flex min-h-screen flex-row gap-5 items-center justify-center p-24 bg-zinc-200">
         {/* <Button gradientDuoTone="cyanToBlue" outline>
           <p>View Curriculum</p>
         </Button>

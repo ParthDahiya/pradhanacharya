@@ -1,53 +1,24 @@
-import TeacherNavBar from "@/components/TeacherNavBar";
-import fetchPokemon from "@/pages/api/hello";
-import axios from "axios";
-import { Button, Checkbox, Table } from "flowbite-react";
-import { Card } from "flowbite-react";
-import { useEffect, useState } from "react";
+import AdminNavbar from '@/components/AdminNavbar'
 
+import { Card,Table } from "flowbite-react";
 const index = () => {
-  const [pokemon, setPokemon] = useState();
-
-
-  // useEffect(() => {
-  //   const url = "https://pokeapi.co/api/v2/pokemon/pikachu";
-  //   axios
-  //     .get(url)
-  //     .then((response) => {
-  //       setPokemon(response.data);
-  //       console.log(response.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log("====================================");
-  //       console.log(err);
-  //       console.log("====================================");
-  //     });
-  // }, []);
-
-  useEffect(() => {
-    // Make a GET request to your API route
-    axios.get('/api/hello')
-      .then((response) => {
-        setPokemon(response.data);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
-
   return (
     <>
-      <TeacherNavBar />
-      <div className="flex min-h-screen flex-row gap-5 items-baseline justify-center p-24 bg-zinc-200">
+      <AdminNavbar />
+      <div
+        className={`flex min-h-screen flex-col items-center justify-center p-24 bg-zinc-200`}
+      >
+       
+        
+        <div className="flex min-h-screen flex-row gap-5 items-baseline justify-center p-24 bg-zinc-200 w-full">
         <div className="w-full">
           <h1 className=" w-full text-center text-3xl font-semibold p-10">
-            {pokemon?.name}
+            Students Info Of Batch: 'Batch no.'
           </h1>
           <Table hoverable>
             <Table.Head>
               <Table.HeadCell>S.No.</Table.HeadCell>
               <Table.HeadCell>Student</Table.HeadCell>
-              <Table.HeadCell>Mark Attendence</Table.HeadCell>
             </Table.Head>
             <Table.Body className="divide-y">
               <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -72,15 +43,7 @@ const index = () => {
                     </p>
                   </Card>
                 </Table.Cell>
-                <Table.Cell>
-                  <Button
-                    className="h-full"
-                    gradientDuoTone="cyanToBlue"
-                    outline
-                  >
-                    <p>Click to mark Attendence</p>
-                  </Button>
-                </Table.Cell>
+                
               </Table.Row>
               <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <Table.Cell>2.</Table.Cell>
@@ -104,22 +67,15 @@ const index = () => {
                     </p>
                   </Card>
                 </Table.Cell>
-                <Table.Cell>
-                  <Button
-                    className="h-full"
-                    gradientDuoTone="cyanToBlue"
-                    outline
-                  >
-                    <p>Click to mark Attendence</p>
-                  </Button>
-                </Table.Cell>
+                
               </Table.Row>
             </Table.Body>
           </Table>
         </div>
       </div>
+      </div>
     </>
-  );
-};
+  )
+}
 
-export default index;
+export default index

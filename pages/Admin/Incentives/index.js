@@ -1,53 +1,22 @@
-import TeacherNavBar from "@/components/TeacherNavBar";
-import fetchPokemon from "@/pages/api/hello";
-import axios from "axios";
-import { Button, Checkbox, Table } from "flowbite-react";
-import { Card } from "flowbite-react";
-import { useEffect, useState } from "react";
+import AdminNavbar from "@/components/AdminNavbar";
+
+import { Card, Button, Table, Checkbox } from "flowbite-react";
 
 const index = () => {
-  const [pokemon, setPokemon] = useState();
-
-
-  // useEffect(() => {
-  //   const url = "https://pokeapi.co/api/v2/pokemon/pikachu";
-  //   axios
-  //     .get(url)
-  //     .then((response) => {
-  //       setPokemon(response.data);
-  //       console.log(response.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log("====================================");
-  //       console.log(err);
-  //       console.log("====================================");
-  //     });
-  // }, []);
-
-  useEffect(() => {
-    // Make a GET request to your API route
-    axios.get('/api/hello')
-      .then((response) => {
-        setPokemon(response.data);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
-
   return (
     <>
-      <TeacherNavBar />
+      <AdminNavbar />
       <div className="flex min-h-screen flex-row gap-5 items-baseline justify-center p-24 bg-zinc-200">
         <div className="w-full">
           <h1 className=" w-full text-center text-3xl font-semibold p-10">
-            {pokemon?.name}
+            Incentives
           </h1>
           <Table hoverable>
             <Table.Head>
               <Table.HeadCell>S.No.</Table.HeadCell>
-              <Table.HeadCell>Student</Table.HeadCell>
-              <Table.HeadCell>Mark Attendence</Table.HeadCell>
+              <Table.HeadCell>Student Name</Table.HeadCell>
+              <Table.HeadCell>Incentive</Table.HeadCell>
+              <Table.HeadCell>Checkbox</Table.HeadCell>
             </Table.Head>
             <Table.Body className="divide-y">
               <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -78,8 +47,11 @@ const index = () => {
                     gradientDuoTone="cyanToBlue"
                     outline
                   >
-                    <p>Click to mark Attendence</p>
+                    <p>Click to Give Incentive</p>
                   </Button>
+                </Table.Cell>
+                <Table.Cell>
+                  <Checkbox />
                 </Table.Cell>
               </Table.Row>
               <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -110,8 +82,11 @@ const index = () => {
                     gradientDuoTone="cyanToBlue"
                     outline
                   >
-                    <p>Click to mark Attendence</p>
+                    <p>Click to Give Incentive</p>
                   </Button>
+                </Table.Cell>
+                <Table.Cell>
+                  <Checkbox />
                 </Table.Cell>
               </Table.Row>
             </Table.Body>
