@@ -1,7 +1,7 @@
 "use client";
 
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
-const TeacherNavBar = () => {
+const AdminNavbar = () => {
   return (
     <Navbar fluid rounded className="absolute w-full">
       <Navbar.Brand href="/">
@@ -37,14 +37,14 @@ const TeacherNavBar = () => {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar.Link href="/">
-          <p>Home</p>
+        <Navbar.Link href="/Admin/TeachersInfo">
+          <p>Teachers Info</p>
         </Navbar.Link>
-        <Navbar.Link href="/Teacher/Curriculam">Curriculam</Navbar.Link>
-        <Navbar.Link href="/Teacher/Students">Students</Navbar.Link>
+        <Navbar.Link href="/Admin/Incentives">Incentives</Navbar.Link>
+        <Navbar.Link href="/Admin/Grievences">Grievences</Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );
 };
 
-export default TeacherNavBar;
+export default AdminNavbar;

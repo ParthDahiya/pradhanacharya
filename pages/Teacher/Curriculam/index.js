@@ -6,7 +6,7 @@ const index = () => {
   return (
     <>
       <TeacherNavBar />
-      <div className="flex min-h-screen flex-row gap-5 items-baseline justify-center p-24 ">
+      <div className="flex min-h-screen flex-row gap-5 items-baseline justify-center p-24 bg-zinc-200">
         <div className="w-full">
         <h1 className=" w-full text-center text-3xl font-semibold p-10">
             Curriculam
